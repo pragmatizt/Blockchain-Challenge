@@ -14,10 +14,11 @@ def get_indices_of_item_weights(weights, length, limit):
     for index in range(0, length):
         # Set weight to that indexed value
         weight = weights[index]
-        # Get the difference between 21 and weight
+        # define difference:  
         difference = limit - weight
         
         # Validate if the result of difference is in hash
+        # Pass the table and the differences 
         validate = hash_table_retrieve(ht, difference)
         
         # If validate returns a value

@@ -27,9 +27,9 @@ def reconstruct_trip(tickets, length):
     route[0] = hash_table_retrieve(hashtable, 'NONE')
 
     # Start with 1, since 0th is confirmed
-    for i in range(1, length):
+    for index in range(1, length):
         # Next destination uses the previous key as destination value
-        route[i] = hash_table_retrieve(hashtable, route[i-1])
+        route[index] = hash_table_retrieve(hashtable, route[index-1])
 
     # Remove the destination 'NONE' value
     return route[0:length-1]
